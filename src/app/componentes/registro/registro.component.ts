@@ -1,22 +1,42 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-//para poder hacer las validaciones
-//import { Validators, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormControl } from "@angular/forms";
+import { ToastrService } from "ngx-toastr";
+import { AuthService } from "../../servicios/auth.service";
+import { Usuario } from "../../clases/usuario";
+import { Router } from "@angular/router";
+
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  selector: "app-registro",
+  templateUrl: "./registro.component.html",
+  styleUrls: ["./registro.component.css"],
 })
 export class RegistroComponent implements OnInit {
+  registroForm = new FormGroup({
+    nombre: new FormControl(""),
+    email: new FormControl(""),
+    password: new FormControl(""),
+  });
 
- /* constructor( private miConstructor:FormBuilder) { }
-  email=new FormControl('',[Validators.email]);
-  formRegistro:FormGroup=this.miConstructor.group({
-    usuario:this.email
-  });*/
-  constructor( ) { }
+  constructor(
+    private toastr: ToastrService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  registro() {
+    this.authService
+      .register(
+        this.registroForm.value.nombre,
+        this.registroForm.value.email,
+        this.registroForm.value.password
+      )
+      .then((auth) => {
+        this.router.navigate(["/Principal"]);
+      })
+      .catch((err) => {
+        this.toastr.error("No se pudo crear el usuario", "ERROR");
+      });
   }
-
 }

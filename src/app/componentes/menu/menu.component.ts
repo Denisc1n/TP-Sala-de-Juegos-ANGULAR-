@@ -1,34 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { AuthService } from "../../servicios/auth.service";
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: "app-menu",
+  templateUrl: "./menu.component.html",
+  styleUrls: ["./menu.component.css"],
 })
 export class MenuComponent implements OnInit {
+  constructor(private Afauth: AuthService) {}
 
-  constructor(private route: ActivatedRoute,
-    private router: Router) { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  logOut() {
+    this.Afauth.logout();
   }
-
-  Juego(tipo: string) {
-    switch (tipo) {
-      case 'Adivina':
-          this.router.navigate(['/Juegos/Adivina']);
-        break;
-      case 'Agilidad':
-          this.router.navigate(['/Juegos/Agilidad']);
-        break;
-      case 'AdivinaMasListado':
-          this.router.navigate(['/Juegos/AdivinaMasListado']);
-        break;
-      case 'AgilidadaMasListado':
-          this.router.navigate(['/Juegos/AgilidadaMasListado']);
-        break;
-    }
-  }
-
 }

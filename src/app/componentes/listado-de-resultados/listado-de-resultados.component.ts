@@ -1,25 +1,19 @@
-
-import { Component, OnInit , Input, EventEmitter} from '@angular/core';
-
+import { Component, OnInit, Input, EventEmitter } from "@angular/core";
+import { DataService } from "../../servicios/data.service";
 @Component({
-  selector: 'app-listado-de-resultados',
-  templateUrl: './listado-de-resultados.component.html',
-  styleUrls: ['./listado-de-resultados.component.css']
+  selector: "app-listado-de-resultados",
+  templateUrl: "./listado-de-resultados.component.html",
+  styleUrls: ["./listado-de-resultados.component.css"],
 })
 export class ListadoDeResultadosComponent implements OnInit {
- @Input()
- listado: Array<any>;
+  usuarios: any;
 
-
-  constructor() {
-   }
+  constructor(private dataServ: DataService) {}
 
   ngOnInit() {
-
+    this.dataServ.getUsers().subscribe((res) => {
+      console.info("res", res);
+      this.usuarios = res;
+    });
   }
-
-  ver() {
-    console.info(this.listado);
-  }
-
 }
