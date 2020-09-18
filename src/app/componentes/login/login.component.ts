@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, ReactiveFormsModule } from "@angular/forms";
+import { FormGroup, FormControl } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
 import { AuthService } from "../../servicios/auth.service";
 import { Usuario } from "../../clases/usuario";

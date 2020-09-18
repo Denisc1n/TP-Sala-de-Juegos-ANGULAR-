@@ -5,11 +5,7 @@ import { AppComponent } from "./app.component";
 import { AdivinaElNumeroComponent } from "./componentes/adivina-el-numero/adivina-el-numero.component";
 import { ListadoDeResultadosComponent } from "./componentes/listado-de-resultados/listado-de-resultados.component";
 import { LoginComponent } from "./componentes/login/login.component";
-//  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from "@angular/http";
-
-// import { AccordionModule } from 'ngx-bootstrap';
-// agrego las clases para utilizar ruteo
 import { RouterModule, Routes } from "@angular/router";
 
 import { MiHttpService } from "./servicios/mi-http/mi-http.service";
@@ -26,20 +22,6 @@ import { AdivinaMasListadoComponent } from "./componentes/adivina-mas-listado/ad
 import { AgilidadMasListadoComponent } from "./componentes/agilidad-mas-listado/agilidad-mas-listado.component";
 import { RuteandoModule } from "./ruteando/ruteando.module";
 import { ListadoComponent } from "./componentes/listado/listado.component";
-
-// declaro donde quiero que se dirija
-/*
-const MiRuteo = [{path: 'error' , component: ErrorComponent},
-{path: 'Login' , component: LoginComponent},
-{path: 'Principal' , component: PrincipalComponent , pathMatch: 'full'},
-{path: 'Adivina' , component: AdivinaElNumeroComponent},
-{path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
-{path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-{path: 'Agilidad' , component: AgilidadAritmeticaComponent},
-{path: '' , component: LoginComponent , pathMatch: 'full'},
-
-{path: '**' , component: ErrorComponent} ];
-*/
 import { JugadoresListadoComponent } from "./componentes/jugadores-listado/jugadores-listado.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { JuegoServiceService } from "./servicios/juego-service.service";
@@ -60,9 +42,10 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { PiedraPapelTijeraComponent } from "./componentes/piedra-papel-tijera/piedra-papel-tijera.component";
 import { FooterComponent } from "./componentes/footer/footer.component";
-import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
-import { TatetiComponent } from './componentes/tateti/tateti.component';
-import { SimonDiceComponent } from './componentes/simon-dice/simon-dice.component';
+import { AcercaDeComponent } from "./componentes/acerca-de/acerca-de.component";
+import { TatetiComponent } from "./componentes/tateti/tateti.component";
+import { SimonDiceComponent } from "./componentes/simon-dice/simon-dice.component";
+import { MemotestComponent } from "./componentes/memotest/memotest.component";
 
 @NgModule({
   declarations: [
@@ -95,6 +78,7 @@ import { SimonDiceComponent } from './componentes/simon-dice/simon-dice.componen
     AcercaDeComponent,
     TatetiComponent,
     SimonDiceComponent,
+    MemotestComponent,
   ],
   imports: [
     BrowserModule,

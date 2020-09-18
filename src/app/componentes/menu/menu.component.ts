@@ -14,4 +14,7 @@ export class MenuComponent implements OnInit {
   logOut() {
     this.Afauth.logout();
   }
+  navigateTo(event) {
+    console.log(event);
+  }
 }

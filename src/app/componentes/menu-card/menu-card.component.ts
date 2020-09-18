@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { JuegosComponent } from "../juegos/juegos.component";
+import { bootstrap } from "../../../../node_modules/bootstrap/js/dist";
 @Component({
   selector: "app-menu-card",
   templateUrl: "./menu-card.component.html",
